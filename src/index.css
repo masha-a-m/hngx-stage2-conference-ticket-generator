@@ -24,6 +24,21 @@
   font-weight: normal;
   font-style: normal;
 }
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('/src/assets/fonts/Roboto-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jeju Myeongjo';
+  src: url('src\assets\fonts\JejuMyeongjo-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 .custom-gradient {
   /* background: linear-gradient(180deg, #02191D 0%, #031F24 50%, #073037 100%); */
   background: radial-gradient(52.52% 32.71% at 50% 97.66%,
@@ -103,9 +118,12 @@ body {
   background-color: #24A0B5;
 }
 
-.btn-hover-color{
+.btn-hovercolor{
   color: #d9d9d9;
 }
+
+
+
 .vip {
   background-color: #0E464F;
   color:#fafafa;
@@ -225,23 +243,21 @@ h1 {
 button {
   border-radius: 8px;
 
-  color: #0A0C11;
 
   border: 1px solid transparent; 
   font-size: 1em;
   font-weight: normal;
   font-family: inherit;
-  background-color: #1a1a1a;
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
+/* button:hover {
   border-color: #646cff;
 }
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
-}
+} */
 
 
 

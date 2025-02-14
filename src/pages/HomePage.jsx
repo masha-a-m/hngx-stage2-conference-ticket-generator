@@ -51,7 +51,7 @@ const HomePage = () => {
           <div className="card-stroke card-fill2 rounded-3xl p-6 mb-6">
             {/* Inner Box */}
             <div className="radial-bg card-stroke rounded-3xl text-center shadow-md md:p-4">
-              <h3 className="md:text-3xl text-normal font-bold mb-2 mt-6 pt-5 step-name">Techember Fest "25</h3>
+              <h3 className="md:text-3xl text-normal font-jeju font-bold mb-2 mt-6 pt-5 step-name">Techember Fest "25</h3>
               <p className="text-gray-700 text-xs mb-4 step-name">
                 Join us for an unforgettable experience at <br />
                 Casadopia! Secure your spot now.

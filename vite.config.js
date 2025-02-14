@@ -15,6 +15,7 @@ export default defineConfig({
           },
           fontFamily: {
             roadrage: ['"Road Rage"', 'cursive'],
+            jejumyeongjo: ['Jeju Myeongjo', 'serif'],
 
           },
         },

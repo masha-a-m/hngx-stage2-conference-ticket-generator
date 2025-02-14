@@ -12,7 +12,7 @@ const Header = () => {
       
       <div className="flex items-center space-x-2">
         <img
-          src="hngx-stage2-conference-ticket-generator\src\assets\hugeicons_ticket-01.png" 
+          src="\src\assets\hugeicons_ticket-01.png" 
           alt="Logo"
           className="h-8 w-8 rounded-full"
         />
@@ -34,9 +34,9 @@ const Header = () => {
         </Link>
       </div>
 
-      <button className="group bg-white text-btn-nav btn-stroke font-roboto px-4 py-2 rounded-full flex justify-center items-center space-x-3 transition-all duration-300 group-hover:text-red">
-        <span className="transition-colors group-hover:text-red">MY TICKETS</span>
-        <span className="text-2xl transition-transform group-hover:-rotate-45 group-hover:btn-hover-color">→</span>
+      <button className="group bg-white group-hover:btn-hover! text-btn-nav btn-stroke font-roboto px-4 py-2 rounded-full flex justify-center items-center space-x-3 transition-all duration-300">
+        <span className="transition-colors group-hover:btn-hovercolor!">MY TICKETS</span>
+        <span className="text-2xl transition-transform group-hover:-rotate-45 group-hover:btn-hovercolor">→</span>
       </button>
     </header>
     </div>
