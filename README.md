@@ -14,7 +14,7 @@ A ticket booking application built with React, Vite, and Tailwind CSS. It is the
 - SVGs for ticket backgrounds
 
 ## How to Run
-View the project on Vercel - 
+View the project on Vercel - https://hngx-stage2-conference-ticket-generator-kc2c8ooom.vercel.app/
 
 ## License
 MIT License
