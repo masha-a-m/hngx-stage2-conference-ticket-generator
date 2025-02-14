@@ -12,7 +12,7 @@ const Header = () => {
       
       <div className="flex items-center space-x-2">
         <img
-          src="src\assets\hugeicons_ticket-01.png" 
+          src="hngx-stage2-conference-ticket-generator\src\assets\hugeicons_ticket-01.png" 
           alt="Logo"
           className="h-8 w-8 rounded-full"
         />
@@ -34,7 +34,6 @@ const Header = () => {
         </Link>
       </div>
 
-      {/* Right: My Tickets Button */}
       <button className="bg-white text-btn-nav btn-stroke font-roboto px-4 py-2 rounded-full flex justify-center items-center space-x-3">
         <span>MY TICKETS</span>
         <span className="text-2xl">→</span>

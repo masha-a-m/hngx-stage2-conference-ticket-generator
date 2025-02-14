@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header'; // Adjust the path as needed
+import Header from '../components/Header';
 
 const HomePage = () => {
   const navigate = useNavigate();
@@ -8,24 +8,23 @@ const HomePage = () => {
   const [selectedNumber, setSelectedNumber] = useState(1);
   const [selectedTicket, setSelectedTicket] = useState(null);
 
-  // Handle number selection
+ 
   const handleNumberSelect = (number) => {
     setSelectedNumber(number);
-    setIsDropdownOpen(false); // Close the dropdown after selection
+    setIsDropdownOpen(false);
   };
 
-   // Handle ticket selection
+   
   const handleTicketSelect = (ticketType) => {
-    setSelectedTicket(ticketType); // Set the selected ticket
+    setSelectedTicket(ticketType); 
   };
 
-  // Navigate to the next page
   const handleNext = () => {
     if (!selectedTicket) {
       alert('Please select a ticket type before proceeding.');
       return;
     }
-    navigate('/form'); // Navigate to the form page
+    navigate('/form'); 
   };
 
   return (
@@ -44,12 +43,11 @@ const HomePage = () => {
             <span className="text-sm step-name">Step 1/3</span>
           </div>
 
-          {/* Progress Line */}
+          {/* Progress Bar */}
           <div className="relative h-1 bg-blue-200 rounded-full mb-6">
             <div className="absolute top-0 left-0 h-full bg-blue-700 rounded-full" style={{ width: '33%' }}></div>
           </div>
 
-          {/* Event Card */}
           <div className="card-stroke card-fill2 rounded-3xl p-6 mb-6">
             {/* Inner Box */}
             <div className="radial-bg card-stroke rounded-3xl text-center shadow-md md:p-4">
