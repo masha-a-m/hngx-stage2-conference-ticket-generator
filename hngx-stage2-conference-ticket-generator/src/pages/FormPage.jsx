@@ -4,6 +4,9 @@ import Header from '../components/Header';
 
 const FormPage = () => {
   const navigate = useNavigate();
+  const handleNextPage = () => {
+    navigate('/ticket'); 
+  };
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -262,7 +265,7 @@ const FormPage = () => {
               Back
             </button>
             <button
-              onClick={handleNext}
+              onClick={handleNextPage}
               className="next-btn text-white! px-4 py-2 rounded-md w-full md:w-1/2"
             >
               Get My Free Ticket
