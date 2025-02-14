@@ -5,7 +5,7 @@ import Header from '../components/Header';
 const FormPage = () => {
   const navigate = useNavigate();
   const handleNextPage = () => {
-    navigate('/ticket'); 
+    navigate('/ticketPage'); 
   };
   const [formData, setFormData] = useState({
     name: '',
