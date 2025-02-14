@@ -1,0 +1,251 @@
+@import "tailwindcss";
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: rgba(255, 255, 255, 0.87);
+  background-color: #242424;
+
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@font-face {
+  font-family: 'Road Rage';
+  src: url('src\assets\fonts\Road_Rage.otf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.custom-gradient {
+  /* background: linear-gradient(180deg, #02191D 0%, #031F24 50%, #073037 100%); */
+  background: radial-gradient(52.52% 32.71% at 50% 97.66%,
+        rgba(36, 160, 181, 0.2) 0%,
+        rgba(36, 160, 181, 0) 100%);
+    background-color: #02191D;
+    /* Fallback color */
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* Ensures it covers the full page */
+    background-attachment: fixed;
+    /* Keeps the background fixed */
+    font-synthesis: none;
+    text-rendering: optimizeLegibility;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+
+.text-stroked {
+  -webkit-text-stroke: 1px white;
+  /* Stroke color and thickness */
+  font-size: 1.5rem;
+  /* Adjust font size as needed */
+}
+
+.text-title {
+  color: #0E464F;
+}
+
+text-white{
+  color: #ffffff;
+}
+
+.text-nav{
+  color: #B3B3B3;
+}
+
+.btn-stroke {
+  outline-color: #D5EA00;
+}
+
+.text-btn-nav{
+  color: #0A0C11;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  
+}
+
+.card-stroke {
+  border-color: #0E464F;
+}
+
+.card-stroke2 {
+  border-color: #07373F;
+}
+
+.input {
+  border: 1px solid #07373F;
+}
+
+.btn-bg {
+  color: #041E23;
+  border-color: #0E464F;
+}
+
+.cancel {
+  border-color: #24A0B5;
+}
+.vip {
+  background-color: #0E464F;
+  color:#fafafa;
+}
+.card-fill {
+  background-color: #041E23;
+}
+.card-fill2 {
+  background-color: #0b2a31;
+}
+.card-fill3 {
+  background-color: #052228;
+}
+
+.regular-access {
+  background-color: #197686;
+}
+
+.line {
+  color: #052930;
+}
+
+.one-entry {
+  color: #0E464F;
+}
+
+.free-btn {
+  background-color: #0E464F;
+}
+
+.image-upload {
+  background-color: #0E464F;
+}
+.step-name {
+  color: #fafafa;
+}
+
+.ticket {
+  background-color: #0E464F;
+}
+
+.linear {
+  background: linear-gradient(180deg,
+        /* Vertical gradient (top to bottom) */
+        #F9DBAF 0%,
+        /* Start color at 0% */
+        #938167 50%,
+        /* Middle color at 50% */
+        #F9DBAF 100%
+        /* End color at 100% */
+      );
+
+      color: #052930
+}
+.progress-bar {
+  color: #24A0B5;
+}
+
+.subtract {
+  color: #D9D9D9;
+}
+
+.inner-bg{ 
+  color: #052228;
+  border-color: #07373F;
+}
+
+border-nav {
+  border: 1px solid #197686;
+}
+
+.transparent {
+  border-color: #24A0B5;
+}
+
+.next-btn {
+  background-color: #24A0B5;
+}
+
+.second-progress {
+  color: #07373F;
+}
+
+.form-input {
+  border-color: #07373F;
+}
+
+.textarea {
+  color: #AAAAAA;
+}
+
+.progress {
+  color: #0E464F;
+}
+
+/* Define the radial gradient */
+.radial-bg {
+  background: radial-gradient(circle at 20% 50%,
+      /* Gradient starts at 20% from the left */
+      #0e353b 20%,
+      /* Color at 20% */
+      #02161a 100%
+      
+      /* Same color at 100% */
+    );
+  background-size: 200% 200%;
+  /* Ensures the gradient spans the entire box */
+  background-position: center;
+}
+
+
+h1 {
+  font-size: 3.2em;
+  line-height: 1.1;
+}
+
+button {
+  border-radius: 8px;
+
+  color: #0A0C11;
+
+  border: 1px solid transparent; 
+  font-size: 1em;
+  font-weight: normal;
+  font-family: inherit;
+  background-color: #1a1a1a;
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: #646cff;
+}
+button:focus,
+button:focus-visible {
+  outline: 4px auto -webkit-focus-ring-color;
+}
+
+
+
+@media (prefers-color-scheme: light) {
+  :root {
+    color: #213547;
+    background-color: #ffffff;
+  }
+  a:hover {
+    color: #747bff;
+  }
+  button {
+    background-color: #f9f9f9;
+  }
+}
