@@ -72,7 +72,7 @@ const TicketPage = () => {
               viewBox="0 0 464 165"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
-              className="absolute inset-0 md:w-full md:h-full md:visible"
+              className="absolute inset-0 md:w-full invisible md:h-full md:visible"
             >
               <path
                 fillRule="evenodd"

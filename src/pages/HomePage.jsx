@@ -134,7 +134,7 @@ const HomePage = () => {
               {/* Input Field */}
               <input
                 type="text"
-                readOnly
+                
                 value={selectedNumber}
                 className="w-full p-2 border input rounded-lg pr-8 text-white cursor-pointer"
                 placeholder="1"
@@ -142,14 +142,14 @@ const HomePage = () => {
 
               {/* Arrow Icon */}
               <button
-                className="absolute inset-y-0 right-0 flex items-center bg-black"
+                className="absolute inset-y-0 right-0 flex items-center bg-transparent"
                 onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               >
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   className="h-5 w-5"
                   viewBox="0 0 20 20"
-                  fill=""
+                  fill="currentColor"
                 >
                   <path
                     fillRule="evenodd"
@@ -163,6 +163,7 @@ const HomePage = () => {
               {isDropdownOpen && (
                 <ul
                   className="absolute top-full left-0 mt-2 w-full text-black bg-white rounded-lg shadow-md z-10"
+                  style={{ backgroundColor: 'transparent', backdropFilter: 'blur(10px)' }}
                   onClick={(e) => e.stopPropagation()}
                 >
                   {[...Array(10).keys()]
@@ -170,7 +171,7 @@ const HomePage = () => {
                     .map((num) => (
                       <li
                         key={num + 1}
-                        className={`py-2 px-4 cursor-pointer hover:bg-gray-100 ${
+                        className={`py-2 px-4 cursor-pointer hover:bg-gray-100 text-black ${
                           selectedNumber === num + 1 && 'bg-gray-100'
                         }`}
                         onClick={() => handleNumberSelect(num + 1)}
@@ -190,7 +191,7 @@ const HomePage = () => {
                 <button className="px-4 py-2 progress-bar border transparent bg-transparent! rounded-md w-full md:w-3/8">Cancel</button>
 
                 <button
-                  onClick={handleNext} // Attach the handleNext function
+                  onClick={handleNext} 
                   className="next-btn text-white! px-4 py-2 rounded-md w-full md:w-3/8"
                 >
                   Next

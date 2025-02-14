@@ -1,15 +1,21 @@
-import React, { useEffect, useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
-import Header from '../components/Header'; 
+import Header from '../components/Header';
 
 const DownloadTicket = () => {
   const [formData, setFormData] = React.useState({
     name: '', 
     email: '', 
-    aboutProject: '',
+    aboutProject: '', 
     profilePhoto: null, 
+    ticketType: '', 
+    numberOfTickets: 1, 
   });
 
+  const handleBack = () => {
+    window.history.back();
+  };
+  
   React.useEffect(() => {
     try {
       const savedData = localStorage.getItem('attendeeDetails');
@@ -21,10 +27,6 @@ const DownloadTicket = () => {
     }
   }, []);
 
-  const handleBack = () => {
-    window.history.back();
-  };
-
   return (
     <div
       className="min-h-screen custom-gradient"
@@ -35,40 +37,93 @@ const DownloadTicket = () => {
       {/* Main Body */}
       <main className="p-6">
         {/* Outer Box */}
-        <div className="max-w-2xl mx-auto btn-bg border cancel rounded-4xl shadow-md p-8 mt-8 relative">
-          {/* Title and Step Indicator */}
+        <div className="max-w-xl mx-auto custom-gradient shadow-md p-6 mt-8 border-4 transparent rounded-3xl">
           <div className="flex justify-between items-center mb-4">
-            <h2 className="text-2xl text-white font-bold">Your Downloaded Ticket</h2>
-            <span className="text-sm text-gray-500">Step 3/3</span>
+            <h2 className="text-2xl text-white font-bold">Ready</h2>
+            <span className="text-sm step-name font-bold">Step 3/3</span>
           </div>
 
-          {/* Progress Line */}
-          <div className="relative h-1 bg-blue-200 rounded-full mb-6">
-            <div
-              className="absolute top-0 left-0 h-full bg-blue-700 rounded-full"
-              style={{ width: '100%' }}
-            ></div>
+          {/* Horizontal Line */}
+          <hr className="border-t transparent h-2 mb-14 size-74 mx-auto" />
+
+          <div className="mb-8 text-center">
+            <h3 className="text-3xl text-white font-bold mb-2">Your Ticket is Booked!</h3>
+            <p className="text-gray-200 text-normal">You can download or check your email for a copy.</p>
           </div>
 
-          {/* Avatar Section */}
-          <div className="flex flex-col items-center space-y-4 mb-8">
-            {formData.profilePhoto && (
-              <img
-                src={formData.profilePhoto}
-                alt="Profile"
-                className="w-24 h-24 rounded-full border-2 border-blue-600"
-              />
-            )}
-            <h3 className="text-xl font-bold step-name">{formData.name || 'Not Provided'}</h3>
-            <p className="text-lg step-name">{formData.email || 'Not Provided'}</p>
-            <p className="text-base text-gray-700 step-name">{formData.aboutProject || 'Not Provided'}</p>
+          {/* Ticket Details Container */}
+          <div className="custom-gradient border border-nav rounded-3xl overflow-hidden relative mb-8">
+            {/* Ticket Content */}
+            <div className="p-6 space-y-6">
+              {/* Event Name */}
+              <h4 className="text-4xl font-bold text-white text-center">Techember Fest "25</h4>
+
+              <div className="flex items-center justify-center space-x-2">
+                <span role="img" aria-label="location" className="text-red-500 text-2xl">
+                  📍
+                </span>
+                <p className="text-lg text-center">04 Rumens Road, Ikoyi, Lagos</p>
+              </div>
+
+              {/* Uploaded Profile Photo */}
+              {formData.profilePhoto && (
+                <div className="flex justify-center items-center">
+                  <img
+                    src={formData.profilePhoto}
+                    alt="Profile"
+                    className="w-24 h-24 rounded-lg border-2 border-black object-cover"
+                  />
+                </div>
+              )}
+
+              {/* User Details Section */}
+              <div className="border border-black text-white! rounded-lg p-4 space-y-4">
+                {/* Name */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                  <p className="font-bold text-lg md:w-1/2">Enter your name:</p>
+                  <p className="text-lg md:w-1/2 text-right">{formData.name || 'Not Provided'}</p>
+                </div>
+
+                {/* Email */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                  <p className="font-bold text-lg md:w-1/2">Enter your email *:</p>
+                  <p className="text-lg md:w-1/2 text-right">{formData.email || 'Not Provided'}</p>
+                </div>
+
+                {/* Ticket Type */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                  <p className="font-bold text-lg md:w-1/2">Ticket type:</p>
+                  <p className="text-lg md:w-1/2 text-right">{formData.ticketType || 'Not Selected'}</p>
+                </div>
+
+                {/* Number of Tickets */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                  <p className="font-bold text-lg md:w-1/2">Ticket for:</p>
+                  <p className="text-lg md:w-1/2 text-right">{formData.numberOfTickets || 1} person(s)</p>
+                </div>
+
+                {/* Special Request */}
+                <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
+                  <p className="font-bold text-lg md:w-1/2">Special request:</p>
+                  <p className="text-lg md:w-1/2 text-right">{formData.aboutProject || 'None'}</p>
+                </div>
+              </div>
+
+              {/* QR Code */}
+              <div className="flex justify-center items-center">
+                <img
+                  src="src\assets\bar.png" //
+                  alt="bar Code"
+                  className="w-66 h-40 rounded-lg"
+                />
+              </div>
+            </div>
           </div>
 
           {/* Buttons */}
           <div className="flex justify-between">
-            <button
-              onClick={handleBack}
-              className="px-4 py-2 progress-bar border transparent bg-transparent! rounded-md w-full md:w-4/9"
+            <button className="progress-bar border transparent bg-transparent! px-4 py-2 rounded-md w-full md:w-4/9"
+            onClick={handleBack}
             >
               Go Back
             </button>

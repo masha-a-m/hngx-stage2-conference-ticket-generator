@@ -31,7 +31,7 @@ const FormPage = () => {
 
   //   try {
   //     const savedData = JSON.parse(localStorage.getItem('attendeeDetails'));
-  //     console.log('Retrieved data from localStorage:', savedData); // Debugging line
+  //     console.log('Retrieved data from localStorage:', savedData); 
   //     if (savedData) {
   //       setFormData(savedData);
   //     }
@@ -60,7 +60,6 @@ const FormPage = () => {
     }));
   };
 
-  //  file upload
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -68,14 +67,13 @@ const FormPage = () => {
       reader.onload = (event) => {
         setFormData((prevData) => ({
           ...prevData,
-          profilePhoto: event.target.result, // Save as base64 string
+          profilePhoto: event.target.result, 
         }));
       };
-      reader.readAsDataURL(file); // Convert file to base64
+      reader.readAsDataURL(file); 
     }
   };
 
-  // Validate form fields
   const validateForm = () => {
     let isValid = true;
     const newErrors = {};
@@ -204,7 +202,7 @@ const FormPage = () => {
                 name="name" placeholder="John Doe"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`w-full p-2 border form-input rounded-xl ${
+                className={`w-full p-2 border transparent form-input rounded-xl ${
                 errors.name ? 'border-red-500' : ''
               }`} 
   />
@@ -214,7 +212,7 @@ const FormPage = () => {
             {/* Email Input */}
             <div className="mb-4">
               <label className="block step-name mb-2">Enter your email *</label>
-              <div className="flex items-center border form-input rounded-xl overflow-hidden">
+              <div className="flex items-center border  form-input rounded-xl overflow-hidden">
                 <span className="px-3 text-white">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
@@ -231,7 +229,7 @@ const FormPage = () => {
                   name="email"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full p-2 text-white text-xs md:text-normal "
+                  className="w-full p-2 text-white text-xs focus:transparent md:text-normal "
                   placeholder="hello@avioflagos.io"
                 />
               </div>
