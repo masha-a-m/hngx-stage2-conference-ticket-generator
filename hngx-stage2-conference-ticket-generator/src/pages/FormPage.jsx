@@ -4,9 +4,7 @@ import Header from '../components/Header';
 
 const FormPage = () => {
   const navigate = useNavigate();
-  const handleNextPage = () => {
-    navigate('/ticketPage'); 
-  };
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -113,12 +111,9 @@ const FormPage = () => {
     window.history.back();
   };
 
-  const handleNext = () => {
-    if (validateForm()) {
-      setStep(3); 
-      navigate('/ticket'); 
-    }
-    };
+  const handleNextPage = () => {
+    navigate('/ticket'); 
+  };
 
   return (
     <div
