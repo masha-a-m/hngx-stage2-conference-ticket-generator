@@ -61,18 +61,17 @@ const HomePage = () => {
                   <span role="img" aria-label="location">📍</span> Hassan Street
                 </div>
                 <div className="flex space-x-2 space-y-2 flex-row md:flex-row">
-                  <span className="hidden  md:visible">| |</span>
+                  <span className="invisible  md:visible">| |</span>
                   <div className="ml-4">
                     <span>March 15, 2025</span>
                   </div>
-                  <span className="hidden md:visible">|</span>
+                  <span className="invisible md:visible">|</span>
                   <span>7:00 PM</span>
                 </div>
               </div>
             </div>
           
 
-          {/* Horizontal Line */}
           <hr className="border-t second-progress my-6" />
 
           {/* Ticket Types */}
@@ -82,7 +81,7 @@ const HomePage = () => {
               {/* Regular Access */}
               <div 
                onClick={() => handleTicketSelect('Regular Access')}
-               className={`regular-access rounded-lg p-4 flex xs:hidden justify-between items-center cursor-pointer ${
+               className={`regular-access rounded-lg p-4 flex justify-between items-center cursor-pointer ${
                   selectedTicket === 'Regular Access' ? 'ring-2 ring-blue-500' : ''
                 }`}
                 >

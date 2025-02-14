@@ -1,7 +1,10 @@
 import React, { useState, useEffect } from 'react';
-import Header from '../components/Header'; // Adjust the path as needed
+import { useNavigate } from 'react-router-dom';
+import Header from '../components/Header'; 
 
 const FormPage = () => {
+  const navigate = useNavigate();
+  
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -37,13 +40,11 @@ const FormPage = () => {
   //   }
   // }, []);
 
-  // Save data to localStorage whenever formData changes
   useEffect(() => {
     try {
-      // Convert profilePhoto to base64 before saving
       let dataToSave = { ...formData };
       if (formData.profilePhoto && typeof formData.profilePhoto === 'string') {
-        dataToSave = { ...dataToSave, profilePhoto: formData.profilePhoto }; // Store as-is if already a string
+        dataToSave = { ...dataToSave, profilePhoto: formData.profilePhoto }; 
       }
       localStorage.setItem('attendeeDetails', JSON.stringify(dataToSave));
     } catch (error) {
@@ -51,7 +52,6 @@ const FormPage = () => {
     }
   }, [formData]);
 
-  // Handle input changes
   const handleInputChange = (e) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -60,7 +60,7 @@ const FormPage = () => {
     }));
   };
 
-  // Handle file upload
+  //  file upload
   const handleFileUpload = (e) => {
     const file = e.target.files[0];
     if (file) {
@@ -103,20 +103,18 @@ const FormPage = () => {
       isValid = false;
     }
 
-    setErrors(newErrors); // Update error state
+    setErrors(newErrors);
     return isValid;
   };
 
-  // Navigate to the previous page
   const handleBack = () => {
     window.history.back();
   };
 
-  // Navigate to the next page
-  const handleNext = () => {
+  const handleNextPage = () => {
     if (validateForm()) {
-      setStep(3); // Update step indicator
-      window.location.href = '/ticket'; // Navigate to the ticket page
+      setStep(3); 
+      navigate('/ticket'); 
     }
     };
 
@@ -265,7 +263,7 @@ const FormPage = () => {
               Back
             </button>
             <button
-              onClick={handleNext}
+              onClick={handleNextPage}
               className="next-btn text-white! px-4 py-2 rounded-md w-full md:w-1/2"
             >
               Get My Free Ticket

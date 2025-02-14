@@ -34,9 +34,9 @@ const Header = () => {
         </Link>
       </div>
 
-      <button className="bg-white text-btn-nav btn-stroke font-roboto px-4 py-2 rounded-full flex justify-center items-center space-x-3">
-        <span>MY TICKETS</span>
-        <span className="text-2xl">→</span>
+      <button className="group bg-white text-btn-nav btn-stroke font-roboto px-4 py-2 rounded-full flex justify-center items-center space-x-3 transition-all duration-300 group-hover:text-red">
+        <span className="transition-colors group-hover:text-red">MY TICKETS</span>
+        <span className="text-2xl transition-transform group-hover:-rotate-45 group-hover:btn-hover-color">→</span>
       </button>
     </header>
     </div>

@@ -98,6 +98,14 @@ body {
 .cancel {
   border-color: #24A0B5;
 }
+
+.btn-hover {
+  background-color: #24A0B5;
+}
+
+.btn-hover-color{
+  color: #d9d9d9;
+}
 .vip {
   background-color: #0E464F;
   color:#fafafa;
