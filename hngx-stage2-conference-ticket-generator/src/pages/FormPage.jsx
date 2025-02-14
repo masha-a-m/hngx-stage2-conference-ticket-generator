@@ -112,8 +112,11 @@ const FormPage = () => {
   };
 
   const handleNextPage = () => {
-    navigate('/ticket'); 
-  };
+    if (validateForm()) {
+      setStep(3); 
+      navigate('/ticket'); 
+    }
+    };
 
   return (
     <div
