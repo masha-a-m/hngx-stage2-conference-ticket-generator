@@ -147,11 +147,11 @@ const FormPage = () => {
           <div className="card-stroke card-fill2 rounded-3xl p-6  mb-6">
           <div className="inner-bg border rounded-2xl p-6 mb-10">
             <p className="text-sm step-name mt-2 mb-4">Upload Profile Photo</p>
-            <div className="flex justify-center items-center bg-black opacity-20 rounded-lg p-1 relative">
+            <div className="flex justify-center items-center rounded-lg p-1 relative">
             <div className="w-40% rounded-3xl image-upload">
               {formData.profilePhoto ? (
                 <div
-                  className="w-full h-full cursor-pointer"
+                  className="w-40 h-40 cursor-pointer"
                   onClick={() => setFormData({ ...formData, profilePhoto: null })}
                 >
                   <img
@@ -162,12 +162,12 @@ const FormPage = () => {
                   <div
                     className="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 hover:opacity-50 transition-opacity"
                   >
-                    <span role="img" aria-label="upload" className="text-white text-2xl">
-                      📥
-                    </span>
-                    <p className="text-white text-sm">Drag & drop or click to upload</p>
+                  <span role="img" aria-label="upload" className="text-white text-2xl mb-2 block">
+                    📥
+                  </span>
+                  <p className="text-white text-sm text-center w-3/9">Drag & drop or click to upload</p>
                   </div>
-                </div>
+                  </div>
               ) : (
                 <label htmlFor="profile-upload" className="cursor-pointer w-full h-40 flex flex-col items-center justify-center p-4">
                   <span role="img" aria-label="upload" className="text-white text-2xl mb-2">
@@ -248,9 +248,9 @@ const FormPage = () => {
                 className="w-full p-2 h-40 border textarea form-input rounded-lg"
                 placeholder="Textarea"
               ></textarea>
-              {errors.aboutProject && (
+              {/* {errors.aboutProject && (
                 <p className="text-red-500 text-sm mt-1"> {errors.aboutProject} </p>
-              )}
+              )} */}
             </div>
           </div>
 
