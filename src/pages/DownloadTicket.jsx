@@ -130,7 +130,7 @@ const DownloadTicket = () => {
               {/* QR Code */}
               <div className="flex justify-center items-center">
                 <img
-                  src="src\assets\bar.png" //
+                  src="assets/bar.png"
                   alt="bar Code"
                   className="w-66 h-40 rounded-lg"
                 />

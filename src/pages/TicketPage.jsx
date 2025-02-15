@@ -135,7 +135,7 @@ const TicketPage = () => {
               {/* QR Code */}
               <div className="flex rounded-xl justify-center items-center">
                 <img
-                  src="src\assets\download.png" // Replace with actual QR code image
+                  src="assets/download.png" 
                   alt="QR Code"
                   className="md:w-30 md:h-30 absolute md:left-8 md:top-14 top-4 left-1 w-6/6 h-6/6"
                 />
