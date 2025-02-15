@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
+import logo from '../assets/hugeicons_ticket-01.png';
 
 const Header = () => {
   return (
@@ -12,7 +13,7 @@ const Header = () => {
       
       <div className="flex items-center space-x-2">
         <img
-          src="\src\assets\hugeicons_ticket-01.png" 
+          src={logo}
           alt="Logo"
           className="h-8 w-8 rounded-full"
         />
@@ -23,13 +24,13 @@ const Header = () => {
       
 
       <div className="hidden md:flex space-x-6">
-        <Link to="/" className="text-white! hover:text-gray-700 font-normal! text-sm font-jejumyeongjo!">
+        <Link to="/" className="text-white! hover:text-gray-700 font-normal! text-sm ">
           Events
         </Link>
-        <Link to="/" className="text-nav font-normal! text-sm font-jejumyeongjo1">
+        <Link to="/" className="text-nav font-normal! text-sm">
           My Tickets
         </Link>
-        <Link to="/" className="text-nav font-normal! text-sm font-jejumyeongjo">
+        <Link to="/" className="text-nav font-normal! text-sm">
           About Project
         </Link>
       </div>

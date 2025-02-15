@@ -7,17 +7,15 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss({
-      content: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'], // Ensure this includes all relevant files
+      content: ['./src/**/*.{js,jsx,ts,tsx}', './index.html'],
       theme: {
         extend: {
-          backgroundImage: {
-            'custom-gradient': "linear-gradient(180deg, #02191D 100%, #031F24 100%, #073037 100%)",
-          },
           fontFamily: {
-            roadrage: ['"Road Rage"', 'cursive'],
-            jejumyeongjo: ['Jeju Myeongjo', 'serif'],
-
-          },
+            jejumyeongjo: ["JejuMyeongjo", "serif"],
+            roadrage: ["Road Rage", "cursive"],
+            roboto: ["Roboto", "sans-serif"],
+    },
+          
         },
       },
     }),

@@ -3,8 +3,8 @@
 @tailwind components;
 @tailwind utilities;
 
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
 
@@ -19,24 +19,21 @@
 }
 
 @font-face {
-  font-family: 'Road Rage';
-  src: url('src\assets\fonts\Road_Rage.otf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "Road Rage";
+  src: url("/public/fonts/Road_Rage.otf");
+  
 }
 
 @font-face {
   font-family: 'Roboto';
-  src: url('/src/assets/fonts/Roboto-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  src: url("/src/assets/fonts/Roboto-Regular.ttf") format('truetype');
+  
 }
 
 @font-face {
-  font-family: 'Jeju Myeongjo';
-  src: url('src\assets\fonts\JejuMyeongjo-Regular.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
+  font-family: "JejuMyeongjo";
+  src: url("/public/fonts/JejuMyeongjo-Regular.ttf");
+  
 }
 
 .custom-gradient {
