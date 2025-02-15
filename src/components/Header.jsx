@@ -12,7 +12,7 @@ const Header = () => {
       
       <div className="flex items-center space-x-2">
         <img
-          src='assets/hugeicons_ticket-01.png'
+          src='public/assets/hugeicons_ticket-01.png'
           alt="Logo"
           className="h-8 w-8 rounded-full"
         />
