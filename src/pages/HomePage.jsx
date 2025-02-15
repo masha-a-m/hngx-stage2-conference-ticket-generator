@@ -82,7 +82,7 @@ const HomePage = () => {
               <div 
                onClick={() => handleTicketSelect('Regular Access')}
                className={`regular-access rounded-lg p-4 flex justify-between items-center cursor-pointer ${
-                  selectedTicket === 'Regular Access' ? 'ring-2 ring-blue-500' : ''
+                  selectedTicket === 'Regular Access' ? 'ring-2 next-btn' : ''
                 }`}
                 >
                 <div className="flex flex-col">
@@ -97,7 +97,7 @@ const HomePage = () => {
               <div 
               onClick={() => handleTicketSelect('VIP Access')}
               className={`border card-stroke2 rounded-lg p-4 flex justify-between items-center cursor-pointer ${
-                  selectedTicket === 'VIP Access' ? 'ring-2 ring-blue-500' : ''
+                  selectedTicket === 'VIP Access' ? 'ring-2 next-btn' : ''
                 }`}
                 >
                 <div
@@ -113,7 +113,7 @@ const HomePage = () => {
               <div
               onClick={() => handleTicketSelect('VVIP Access')}
                 className={`border card-stroke2 rounded-lg p-4 flex justify-between items-center cursor-pointer ${
-                  selectedTicket === 'VVIP Access' ? 'ring-2 ring-blue-500' : ''
+                  selectedTicket === 'VVIP Access' ? 'ring-2 next-btn' : ''
                 }`}
               >
                 <div>
@@ -138,6 +138,7 @@ const HomePage = () => {
                 value={selectedNumber}
                 className="w-full p-2 border input rounded-lg pr-8 text-white cursor-pointer"
                 placeholder="1"
+                onClick={() => setIsDropdownOpen(!isDropdownOpen)}
               />
 
               {/* Arrow Icon */}
@@ -162,7 +163,7 @@ const HomePage = () => {
               {/* Dropdown Menu */}
               {isDropdownOpen && (
                 <ul
-                  className="absolute top-full left-0 mt-2 w-full text-black bg-white rounded-lg shadow-md z-10"
+                  className=" w-full text-black bg-white rounded-lg shadow-md z-10"
                   style={{ backgroundColor: 'transparent', backdropFilter: 'blur(10px)' }}
                   onClick={(e) => e.stopPropagation()}
                 >
@@ -171,7 +172,7 @@ const HomePage = () => {
                     .map((num) => (
                       <li
                         key={num + 1}
-                        className={`py-2 px-4 cursor-pointer hover:bg-gray-100 text-black ${
+                        className={`py-2 px-4 cursor-pointer hover:bg-gray-600 text-black ${
                           selectedNumber === num + 1 && 'bg-gray-100'
                         }`}
                         onClick={() => handleNumberSelect(num + 1)}

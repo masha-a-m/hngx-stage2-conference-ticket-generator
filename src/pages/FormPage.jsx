@@ -91,10 +91,10 @@ const FormPage = () => {
       isValid = false;
     }
 
-    if (!formData.aboutProject.trim()) {
-      newErrors.aboutProject = 'About project is required.';
-      isValid = false;
-    }
+    // if (!formData.aboutProject.trim()) {
+    //   newErrors.aboutProject = 'About project is required.';
+    //   isValid = false;
+    // }
 
     if (!formData.profilePhoto) {
       newErrors.profilePhoto = 'Profile photo is required.';
@@ -202,7 +202,7 @@ const FormPage = () => {
                 name="name" placeholder="John Doe"
                 value={formData.name}
                 onChange={handleInputChange}
-                className={`w-full p-2 border transparent form-input rounded-xl ${
+                className={`w-full p-2 border outline-none border-blue-300/50 text-white md:text-normal! rounded-xl ${
                 errors.name ? 'border-red-500' : ''
               }`} 
   />
@@ -212,8 +212,8 @@ const FormPage = () => {
             {/* Email Input */}
             <div className="mb-4">
               <label className="block step-name mb-2">Enter your email *</label>
-              <div className="flex items-center border  form-input rounded-xl overflow-hidden">
-                <span className="px-3 text-white">
+              <div className="flex items-center border form-input rounded-xl overflow-hidden">
+                <span className="px-3 text-gray-400">
                   <svg
                     xmlns="http://www.w3.org/2000/svg"
                     className="h-5 w-5"
@@ -227,10 +227,14 @@ const FormPage = () => {
                 <input
                   type="email"
                   name="email"
+                  placeholder="hello@avioflagos.io"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="w-full p-2 text-white text-xs focus:transparent md:text-normal "
-                  placeholder="hello@avioflagos.io"
+                  className="w-full p-2 text-white! border border-blue-300/50 text-xs outline-none md:text-normal 
+                  ${
+                errors.email ? 'border-red-500' : ''
+              }`} 
+              "
                 />
               </div>
               {errors.email && <p className="text-red-500 text-sm mt-1"> {errors.email}</p>}
@@ -243,8 +247,8 @@ const FormPage = () => {
                 name="aboutProject"
                 value={formData.aboutProject}
                 onChange={handleInputChange}
-                className="w-full p-2 h-40 border textarea form-input rounded-lg"
-                placeholder="Textarea"
+                className="w-full p-2 h-40 border textarea text-white! md:text-normal! form-input rounded-lg"
+                placeholder="Write..."
               ></textarea>
               {/* {errors.aboutProject && (
                 <p className="text-red-500 text-sm mt-1"> {errors.aboutProject} </p>

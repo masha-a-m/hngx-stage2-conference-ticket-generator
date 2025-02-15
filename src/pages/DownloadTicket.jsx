@@ -1,8 +1,25 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useNavigate } from 'react-router-dom';
 import Header from '../components/Header';
+import html2canvas from 'html2canvas';
 
 const DownloadTicket = () => {
+  
+  const ticketRef = useRef(null); 
+  const handleDownloadTicket = () => {
+    html2canvas(ticketRef.current) 
+      .then((canvas) => {
+        const imgData = canvas.toDataURL('image/png'); 
+        const link = document.createElement('a'); 
+        link.href = imgData;
+        link.download = 'ticz-ticket.png'; 
+        link.click(); 
+      })
+      .catch((error) => {
+        console.error('Error downloading ticket:', error);
+      });
+  };
+
   const [formData, setFormData] = React.useState({
     name: '', 
     email: '', 
@@ -52,7 +69,8 @@ const DownloadTicket = () => {
           </div>
 
           {/* Ticket Details Container */}
-          <div className="custom-gradient border border-nav rounded-3xl overflow-hidden relative mb-8">
+          <div ref={ticketRef} 
+          className="custom-gradient border border-nav rounded-3xl overflow-hidden relative mb-8">
             {/* Ticket Content */}
             <div className="p-6 space-y-6">
               {/* Event Name */}
@@ -62,7 +80,7 @@ const DownloadTicket = () => {
                 <span role="img" aria-label="location" className="text-red-500 text-2xl">
                   📍
                 </span>
-                <p className="text-lg text-center">04 Rumens Road, Ikoyi, Lagos</p>
+                <p className="text-normal step-name text-center">04 Rumens Road, Ikoyi, Lagos</p>
               </div>
 
               {/* Uploaded Profile Photo */}
@@ -77,35 +95,35 @@ const DownloadTicket = () => {
               )}
 
               {/* User Details Section */}
-              <div className="border border-black text-white! rounded-lg p-4 space-y-4">
+              <div className="border border-black text-white! rounded-lg p-6 space-y-4">
                 {/* Name */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                  <p className="font-bold text-lg md:w-1/2">Enter your name:</p>
-                  <p className="text-lg md:w-1/2 text-right">{formData.name || 'Not Provided'}</p>
+                  <p className="font-bold text-normal md:w-1/2">Enter your name:</p>
+                  <p className="text-normal md:w-1/2 text-right">{formData.name || 'Not Provided'}</p>
                 </div>
 
                 {/* Email */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                  <p className="font-bold text-lg md:w-1/2">Enter your email *:</p>
-                  <p className="text-lg md:w-1/2 text-right">{formData.email || 'Not Provided'}</p>
+                  <p className="font-bold text-normal md:w-1/2">Enter your email *:</p>
+                  <p className="text-normal md:w-1/2 text-right">{formData.email || 'Not Provided'}</p>
                 </div>
 
                 {/* Ticket Type */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                  <p className="font-bold text-lg md:w-1/2">Ticket type:</p>
-                  <p className="text-lg md:w-1/2 text-right">{formData.ticketType || 'Not Selected'}</p>
+                  <p className="font-bold text-normal md:w-1/2">Ticket type:</p>
+                  <p className="text-normal md:w-1/2 text-right">{formData.ticketType || 'Not Selected'}</p>
                 </div>
 
                 {/* Number of Tickets */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                  <p className="font-bold text-lg md:w-1/2">Ticket for:</p>
-                  <p className="text-lg md:w-1/2 text-right">{formData.numberOfTickets || 1} person(s)</p>
+                  <p className="font-bold text-normal md:w-1/2">Ticket for:</p>
+                  <p className="text-normal md:w-1/2 text-right">{formData.numberOfTickets || 1} person(s)</p>
                 </div>
 
                 {/* Special Request */}
                 <div className="flex flex-col md:flex-row items-start md:items-center justify-between">
-                  <p className="font-bold text-lg md:w-1/2">Special request:</p>
-                  <p className="text-lg md:w-1/2 text-right">{formData.aboutProject || 'None'}</p>
+                  <p className="font-bold text-normal md:w-1/2">Special request:</p>
+                  <p className="text-normal md:w-1/2 text-right">{formData.aboutProject || 'None'}</p>
                 </div>
               </div>
 
@@ -129,13 +147,16 @@ const DownloadTicket = () => {
             </button>
             <button
               className="next-btn text-white! px-4 py-2 rounded-md w-full md:w-4/9"
-              onClick={() => alert('Ticket downloaded successfully!')}
+              onClick={handleDownloadTicket}
             >
               Download Ticket
             </button>
           </div>
         </div>
       </main>
+
+      <script src="https://html2canvas.hertzen.com/dist/html2canvas.min.js"></script>
+
     </div>
   );
 };
