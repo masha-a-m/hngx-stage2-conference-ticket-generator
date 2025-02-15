@@ -1,6 +1,5 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import logo from '../assets/hugeicons_ticket-01.png';
 
 const Header = () => {
   return (
@@ -13,7 +12,7 @@ const Header = () => {
       
       <div className="flex items-center space-x-2">
         <img
-          src={logo}
+          src='public/assets/pngtree-black-qr-code-for-web-png-image_7964376.png'
           alt="Logo"
           className="h-8 w-8 rounded-full"
         />
